@@ -1,0 +1,18 @@
+nav {
+    background-color: #521f85;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.navbar-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;  
+    padding: 10px 15px;
+}
+
+.navbar-list li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
