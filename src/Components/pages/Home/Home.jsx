@@ -5,21 +5,21 @@ import axios from 'axios';
 
 const Home = () => {
   const [data, setData] = useState([]);
-  const [page, setPage] = useState(1); // default page 1
-  const [totalProducts, setTotalProducts] = useState(0); // total products sayını saxlayır
+  const [page, setPage] = useState(1); 
+  const [totalProducts, setTotalProducts] = useState(0); 
 
-  const productsPerPage = 10; // Hər səhifədə 10 məhsul göstəriləcək
+  const productsPerPage = 10; 
 
   useEffect(() => {
     axios
       .get(`https://dummyjson.com/products?limit=${productsPerPage}&skip=${(page - 1) * productsPerPage}&select=title,price,category,description,thumbnail`)
       .then((response) => {
         setData(response.data.products);
-        setTotalProducts(response.data.total); // Cəmi məhsul sayını alırıq
+        setTotalProducts(response.data.total); 
       });
-  }, [page]); // `page` dəyişəndə yenidən API çağırışı edilir
+  }, [page]);
 
-  const totalPages = Math.ceil(totalProducts / productsPerPage); // Cəmi səhifə sayını hesablayırıq
+  const totalPages = Math.ceil(totalProducts / productsPerPage); 
 
   return (
     <div className="container">
@@ -40,7 +40,6 @@ const Home = () => {
         ))}
       </div>
 
-      {/* Pagination */}
       <div className="pagination">
         <button
           onClick={() => setPage(page > 1 ? page - 1 : page)}
