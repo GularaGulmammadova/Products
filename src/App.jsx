@@ -4,8 +4,8 @@ import Footer from './Components/Layout/Footer/Footer';
 import Navbar from './Components/Layout/Navbar/Navbar';
 import { Route, Routes } from 'react-router';
 import Home from './Components/pages/Home/Home';
-import Discount from './Components/pages/Sort/Sort';
 import Reviews from './Components/pages/Reviews/Reviews';
+import Sort from './Components/pages/Sort/Sort';
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/reviews" element={<Reviews/>}/>
-        <Route path="/discount" element={<Discount/>}/>
+        <Route path="/sort" element={<Sort/>}/>
       </Routes>
       <Footer/>
     </div>
