@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <div className="container">
       <div className="homepage">
-        <h1>Welcome to Beauty Shop!</h1>
+        <h1>Welcome to Our Shop!</h1>
         <p>Choose your favorite products and enjoy the shopping!</p>
       </div>
 
