@@ -2,13 +2,13 @@
 import React, { useEffect, useState } from "react";
 import "./Reviews.css";
 // import axios from "axios";
-import { getAllProducts } from "../../../services/reviews-service";
+import { getReviews } from "../../../services/reviews-service";
 
 const Reviews = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
- getAllProducts()
+ getReviews()
       .then((response) => {
         setProducts(response.products);
       });

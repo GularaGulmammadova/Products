@@ -1,6 +1,6 @@
 import { api } from "../api"
 
-export const getAllProducts = async () => {
+export const getReviews = async () => {
     const res = await api.get(`/products`)
 
     if (!res.data) {

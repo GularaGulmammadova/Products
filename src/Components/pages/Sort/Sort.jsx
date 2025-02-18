@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './Sort.css';
 // import axios from 'axios';
-import { getAllProducts } from '../../../services/sort-service';
+import {  getSortBy } from '../../../services/sort-service';
 
 const Sort = () => {
   const [products, setProducts] = useState([]);
@@ -10,7 +10,7 @@ const Sort = () => {
   const [order, setOrder] = useState('asc');
 
   useEffect(() => {
- getAllProducts(sortBy, order)
+ getSortBy(sortBy, order)
       .then((response) => {
         setProducts(response.products);
       });

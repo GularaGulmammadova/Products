@@ -1,6 +1,6 @@
 import { api } from "../api"
 
-export const getAllProducts = async ( sortBy, order) => {
+export const getSortBy = async ( sortBy, order) => {
     const res = await api.get(`/products?sortBy=${sortBy}&order=${order}`)
 
     if (!res.data) {
