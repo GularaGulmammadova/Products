@@ -5,8 +5,8 @@ import axios from 'axios';
 
 const Sort = () => {
   const [products, setProducts] = useState([]);
-  const [sortBy, setSortBy] = useState('title'); 
-  const [order, setOrder] = useState('asc'); 
+  const [sortBy, setSortBy] = useState('title');
+  const [order, setOrder] = useState('asc');
 
   useEffect(() => {
     axios
@@ -14,7 +14,7 @@ const Sort = () => {
       .then((response) => {
         setProducts(response.data.products);
       });
-  }, [sortBy, order]); 
+  }, [sortBy, order]);
 
   return (
     <div className="container">

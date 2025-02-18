@@ -2,24 +2,24 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
 import axios from 'axios';
+import { getAllProducts } from '../../../services/products-service';
 
 const Home = () => {
   const [data, setData] = useState([]);
-  const [page, setPage] = useState(1); 
-  const [totalProducts, setTotalProducts] = useState(0); 
+  const [page, setPage] = useState(1);
+  const [totalProducts, setTotalProducts] = useState(0);
 
-  const productsPerPage = 10; 
+  const productsPerPage = 10;
 
   useEffect(() => {
-    axios
-      .get(`https://dummyjson.com/products?limit=${productsPerPage}&skip=${(page - 1) * productsPerPage}&select=title,price,category,description,thumbnail`)
+    getAllProducts(productsPerPage, (page - 1) * productsPerPage)
       .then((response) => {
-        setData(response.data.products);
-        setTotalProducts(response.data.total); 
+        setData(response.products);
+        setTotalProducts(response.total);
       });
   }, [page]);
 
-  const totalPages = Math.ceil(totalProducts / productsPerPage); 
+  const totalPages = Math.ceil(totalProducts / productsPerPage);
 
   return (
     <div className="container">
