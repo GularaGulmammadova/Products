@@ -1,16 +1,19 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import "./Reviews.css";
-import axios from "axios";
+// import axios from "axios";
+import { getAllProducts } from "../../../services/reviews-service";
 
 const Reviews = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("https://dummyjson.com/products").then((response) => {
-      setProducts(response.data.products);
-    });
+ getAllProducts()
+      .then((response) => {
+        setProducts(response.products);
+      });
   }, []);
+
 
   return (
     <div className="container">

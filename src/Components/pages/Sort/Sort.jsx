@@ -1,7 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import './Sort.css';
-import axios from 'axios';
+// import axios from 'axios';
+import { getAllProducts } from '../../../services/sort-service';
 
 const Sort = () => {
   const [products, setProducts] = useState([]);
@@ -9,10 +10,9 @@ const Sort = () => {
   const [order, setOrder] = useState('asc');
 
   useEffect(() => {
-    axios
-      .get(`https://dummyjson.com/products?sortBy=${sortBy}&order=${order}`)
+ getAllProducts(sortBy, order)
       .then((response) => {
-        setProducts(response.data.products);
+        setProducts(response.products);
       });
   }, [sortBy, order]);
 
